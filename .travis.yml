@@ -8,4 +8,4 @@ deploy:
   on: master
   app: sei-jtn-basic-web-app
   api_key:
-    secure: "$HEROKU_API_KEY"
+    secure: $HEROKU_API_KEY
