@@ -2,10 +2,9 @@ language: java
 jdk:
 - openjdk8
 script: mvn clean verify
-
 deploy:
   provider: heroku
   on: master
   app: sei-jtn-basic-web-app
   api_key:
-    secure: $HEROKU_API_KEY
+    secure: PRRkGRyvv+RfwvJrH+yckSaj7lO9CvZUGfdv5/5kBgLwFYKus2CdfKu0wIOwTlxtRYkDrJBE3U4SPdc/kcDrAZrU+kmhHGQk4CmfJnTGgZ9XCtaHLuP3RPzasjojAy/RyEpQy3P7v6111ZrDtDjK5ysbUAP6TjPvUDw1hARdSwSwphoDkWSNQxMCGFLbXUyLdJln4nSr+zPSopE8onMyCRERGgM5Pos6r3EVS4zk1fuLOrPlRZJTmtEXChiBKwcQMjvt8sCMtdLch3C7h9EE909wSIEbtRvhZ86u+EW1iYgYkrkPGsHj8PhOZaUGOhz0SCYPPZlz4D+wYzml6U+BsI5/bZp8yRRBoBIZliz2rbO44RJFv7ANvrLyUqNvv1D+cZZyiwEShJHBPXlWC+C0QJ9AUnSScgtCRRR7sbZmUrgK12nyOr1mxHNHKaKMr2fnlVebD3GM6NV20/kpYHa65rlhlp+tPvpE5fXnXJFqD/yKH5wGbD+Ykedkze09DmuH4zmU9UCtSceVn2vjUkvbqmX12q08oAulxvv1AqnIZP1fOB9o/MEjl9gR7CcNxseQEF+NhcO4he5w9iJEpmam6bo2iAJl3gWgpT1KD6klT3BCO4F6ylB0/5WNfa8wu9AjDjKkc81cBVc0WHm6ot1Ba3hYOKcFCG90VN4vSLEtzdU=
