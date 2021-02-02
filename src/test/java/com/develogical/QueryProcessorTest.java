@@ -56,7 +56,13 @@ public class QueryProcessorTest {
     }
 
     @Test
+
     public void returnsMinus() {
         assertThat(queryProcessor.process("what is 7 minus 3"), containsString("4"));
+    }
+
+    @Test
+    public void fibonacci() {
+        assertThat(queryProcessor.process("what is the 17th number in the Fibonacci sequence"), containsString("1597"));
     }
 }

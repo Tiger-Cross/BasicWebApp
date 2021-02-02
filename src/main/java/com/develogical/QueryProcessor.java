@@ -112,7 +112,25 @@ public class QueryProcessor {
             }
 
             results.append(ints.toString());
+        }
 
+        if (query.toLowerCase().contains("fibonacci")){
+            Pattern pattern = Pattern.compile("[0-9]+");
+            Matcher matcher = pattern.matcher(query);
+
+            matcher.find();
+            int n = Integer.parseInt(matcher.group());
+
+            int prefib = 0;
+            int fib = 1;
+
+            for (int i = 0; i < n - 1; i ++) {
+                int before = fib;
+                fib += prefib;
+                prefib = before;
+            }
+
+            results.append(fib);
         }
 
         if (query.toLowerCase().contains("minus")) {
