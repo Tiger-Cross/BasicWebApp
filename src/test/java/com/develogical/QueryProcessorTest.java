@@ -19,4 +19,9 @@ public class QueryProcessorTest {
     public void returnsLargestNumber() {
         assertThat(queryProcessor.process("which of the following numbers is the largest: 2, 3"), containsString("3"));
     }
+
+    @Test
+    public void returnsProduct() {
+        assertThat(queryProcessor.process("what is 3 multiplied by 7"), containsString("21"));
+    }
 }

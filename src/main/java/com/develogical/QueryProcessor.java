@@ -44,6 +44,19 @@ public class QueryProcessor {
             results.append(max);
         }
 
+        if (query.toLowerCase().contains("multiplied")) {
+            Pattern pattern = Pattern.compile("[0-9]+");
+            Matcher matcher = pattern.matcher(query);
+            ArrayList<Integer> ints = new ArrayList<>();
+            Integer product = 1;
+            while (matcher.find()) {
+                // Get the matching string
+                String match = matcher.group();
+                product *= Integer.parseInt(match);
+            }
+            results.append(product);
+        }
+
         if (results.length() == 0) {
             return "";
         }
