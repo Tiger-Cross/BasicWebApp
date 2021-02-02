@@ -28,6 +28,11 @@ public class QueryProcessor {
             results.append(System.lineSeparator());
         }
 
+        if (query.toLowerCase().contains("your name")) {
+            results.append("jtn");
+            results.append(System.lineSeparator());
+        }
+
         if (results.length() == 0) {
             return "";
         }
