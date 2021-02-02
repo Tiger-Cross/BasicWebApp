@@ -44,4 +44,9 @@ public class QueryProcessorTest {
     public void returnsPrime() {
         assertThat(queryProcessor.process("which of the following numbers are prime: 7, 9, 13, 12"), containsString("7, 13"));
     }
+
+    @Test
+    public void drNoJamesBond() {
+        assertThat(queryProcessor.process("who played James Bond in the film Dr No"), containsString("Sean Connery"));
+    }
 }

@@ -22,6 +22,10 @@ public class QueryProcessor {
             results.append("Paris");
         }
 
+        if (query.toLowerCase().contains("james bond") && query.toLowerCase().contains("dr no")) {
+            results.append("Sean Connery");
+        }
+
         if (query.toLowerCase().contains("plus")){
             Pattern pattern = Pattern.compile("[0-9]+");
             Matcher matcher = pattern.matcher(query);
