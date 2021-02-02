@@ -14,8 +14,12 @@ public class QueryProcessor {
             results.append("jtn");
         }
 
-        if (query.toLowerCase().contains("Theresa May")) {
+        if (query.toLowerCase().contains("theresa may")) {
             results.append("2017");
+        }
+
+        if (query.toLowerCase().contains("eiffel tower")) {
+            results.append("Paris");
         }
 
         if (query.toLowerCase().contains("plus")){

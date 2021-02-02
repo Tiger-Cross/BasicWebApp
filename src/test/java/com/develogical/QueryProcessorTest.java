@@ -26,6 +26,11 @@ public class QueryProcessorTest {
     }
 
     @Test
+    public void returnsEiffelTowerCity() {
+        assertThat(queryProcessor.process("Eiffel tower"), containsString("Paris"));
+    }
+
+    @Test
     public void returnsProduct() {
         assertThat(queryProcessor.process("what is 3 multiplied by 7"), containsString("21"));
     }
