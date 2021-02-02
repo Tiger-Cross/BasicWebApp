@@ -12,10 +12,13 @@ public class QueryProcessor {
 
         if (query.toLowerCase().contains("your name")) {
             results.append("jtn");
-            results.append(System.lineSeparator());
         }
 
-        if (query.toLowerCase().contains("what is") && query.toLowerCase().contains("plus")){
+        if (query.toLowerCase().contains("Theresa May")) {
+            results.append("2017");
+        }
+
+        if (query.toLowerCase().contains("plus")){
             Pattern pattern = Pattern.compile("[0-9]+");
             Matcher matcher = pattern.matcher(query);
             Integer sum = 0;
