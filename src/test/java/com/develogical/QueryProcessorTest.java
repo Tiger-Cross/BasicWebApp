@@ -39,4 +39,9 @@ public class QueryProcessorTest {
     public void checkSquareCube() {
         assertThat(queryProcessor.process("which of the following numbers is both a square and a cube: 64, 791, 441, 816"), containsString("64"));
     }
+
+    @Test
+    public void drNoJamesBond() {
+        assertThat(queryProcessor.process("who played James Bond in the film Dr No"), containsString("Sean Connery"));
+    }
 }
