@@ -30,6 +30,22 @@ public class QueryProcessor {
             results.append(System.lineSeparator());
         }
 
+        if (query.toLowerCase().contains("largest")) {
+            String[] splittedQuery = query.split(" ");
+
+            int largest = -9999;
+
+            for (int i = 8; i < splittedQuery.length; i++) {
+                String number = splittedQuery[i].replace(",", "");
+                int j = Integer.parseInt(number);
+                if (j > largest) {
+                    largest = j;
+                }
+            }
+
+            results.append(largest);
+        }
+
         if (results.length() == 0) {
             return "";
         }
