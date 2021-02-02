@@ -39,4 +39,9 @@ public class QueryProcessorTest {
     public void checkSquareCube() {
         assertThat(queryProcessor.process("which of the following numbers is both a square and a cube: 64, 791, 441, 816"), containsString("64"));
     }
+
+    @Test
+    public void returnsPrime() {
+        assertThat(queryProcessor.process("which of the following numbers are prime: 7, 9, 13, 12"), containsString("7, 13"));
+    }
 }

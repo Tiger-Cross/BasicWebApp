@@ -86,6 +86,31 @@ public class QueryProcessor {
             results.append("yellow");
         }
 
+        if (query.toLowerCase().contains("prime")) {
+            Pattern pattern = Pattern.compile("[0-9]+");
+            Matcher matcher = pattern.matcher(query);
+            ArrayList<Integer> ints = new ArrayList<>();
+            while (matcher.find()) {
+                // Get the matching string
+                String match = matcher.group();
+                Integer i = Integer.parseInt(match);
+                boolean flag = false;
+                for (int j = 2; j <= i / 2; ++j) {
+                    // condition for nonprime number
+                    if (i % j == 0) {
+                        flag = true;
+                        break;
+                    }
+                }
+                if (!flag) {
+                    ints.add(i);
+                }
+            }
+
+            results.append(ints.toString());
+
+        }
+
         if (results.length() == 0) {
             return "";
         }
