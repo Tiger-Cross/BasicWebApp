@@ -57,6 +57,10 @@ public class QueryProcessor {
             results.append(product);
         }
 
+        if (query.toLowerCase().contains("banana")) {
+            results.append("yellow");
+        }
+
         if (results.length() == 0) {
             return "";
         }
