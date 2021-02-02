@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 public class QueryProcessor {
 
     public String process(String query) {
+        query = query.replace("%20", " ");
         StringBuilder results = new StringBuilder();
 
         if (query.toLowerCase().contains("your name")) {
@@ -17,7 +18,6 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("what is") && query.toLowerCase().contains("plus")){
             Pattern pattern = Pattern.compile("[0-9]+");
             Matcher matcher = pattern.matcher(query);
-            ArrayList<Integer> ints = new ArrayList<>();
             Integer sum = 0;
             while (matcher.find()) {
                 // Get the matching string
