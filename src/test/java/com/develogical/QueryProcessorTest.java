@@ -29,4 +29,9 @@ public class QueryProcessorTest {
     public void returnsProduct() {
         assertThat(queryProcessor.process("what is 3 multiplied by 7"), containsString("21"));
     }
+
+    @Test
+    public void checkSquareCube() {
+        assertThat(queryProcessor.process("which of the following numbers is both a square and a cube: 64, 791, 441, 816"), containsString("64"));
+    }
 }

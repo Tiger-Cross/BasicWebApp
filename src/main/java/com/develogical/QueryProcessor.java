@@ -30,6 +30,24 @@ public class QueryProcessor {
             results.append(sum);
         }
 
+        if (query.toLowerCase().contains("both")
+                && query.toLowerCase().contains("square")
+                && query.toLowerCase().contains("cube")) {
+
+            Pattern pattern = Pattern.compile("[0-9]+");
+            Matcher matcher = pattern.matcher(query);
+
+            while (matcher.find()) {
+                // Get the matching string
+                String match = matcher.group();
+                int testInt = Integer.parseInt(match);
+
+                if (Math.sqrt(testInt) % 1 == 0 && Math.cbrt(testInt) % 1 == 0) {
+                    results.append(testInt);
+                }
+            }
+        }
+
         if (query.toLowerCase().contains("largest")) {
             Pattern pattern = Pattern.compile("[0-9]+");
             Matcher matcher = pattern.matcher(query);
