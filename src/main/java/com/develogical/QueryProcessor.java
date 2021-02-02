@@ -7,9 +7,9 @@ import java.util.regex.Pattern;
 public class QueryProcessor {
 
     public String process(String query) {
-        query = query.replace("%20", " ");
+        query = query.substring(query.indexOf(":") + 1);
         StringBuilder results = new StringBuilder();
-
+        System.out.println(query);
         if (query.toLowerCase().contains("your name")) {
             results.append("jtn");
         }

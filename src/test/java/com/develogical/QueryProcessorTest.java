@@ -16,6 +16,11 @@ public class QueryProcessorTest {
     }
 
     @Test
+    public void addsNumbersWithPercentSep() throws Exception {
+        assertThat(queryProcessor.process("q=253d8470:%20what%20is%206%20multiplied%20by%203"), containsString("18"));
+    }
+
+    @Test
     public void returnsLargestNumber() {
         assertThat(queryProcessor.process("which of the following numbers is the largest: 2, 3"), containsString("3"));
     }
