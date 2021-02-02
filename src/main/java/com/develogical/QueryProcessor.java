@@ -9,8 +9,6 @@ public class QueryProcessor {
     public String process(String query) {
         StringBuilder results = new StringBuilder();
 
-        String[] queryWords = query.split(" ");
-
         if (query.toLowerCase().contains("your name")) {
             results.append("jtn");
             results.append(System.lineSeparator());
@@ -26,8 +24,7 @@ public class QueryProcessor {
                 String match = matcher.group();
                 sum += Integer.parseInt(match);
             }
-            results.append(sum.toString());
-            results.append(System.lineSeparator());
+            results.append(sum);
         }
 
         if (query.toLowerCase().contains("largest")) {

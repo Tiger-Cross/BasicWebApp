@@ -12,7 +12,7 @@ public class QueryProcessorTest {
 
     @Test
     public void addsTwoNumbers() throws Exception {
-        assertThat(queryProcessor.process("what is 5 plus 10"), containsString("15"));
+        assertThat(queryProcessor.process("what is 2012 plus 204"), containsString("2216"));
     }
 
     @Test
