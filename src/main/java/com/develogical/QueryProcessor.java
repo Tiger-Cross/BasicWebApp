@@ -28,19 +28,20 @@ public class QueryProcessor {
         }
 
         if (query.toLowerCase().contains("largest")) {
-            String[] splittedQuery = query.split(" ");
-
-            int largest = -9999;
-
-            for (int i = 8; i < splittedQuery.length; i++) {
-                String number = splittedQuery[i].replace(",", "");
-                int j = Integer.parseInt(number);
-                if (j > largest) {
-                    largest = j;
+            Pattern pattern = Pattern.compile("[0-9]+");
+            Matcher matcher = pattern.matcher(query);
+            ArrayList<Integer> ints = new ArrayList<>();
+            Integer max = -9999;
+            while (matcher.find()) {
+                // Get the matching string
+                String match = matcher.group();
+                Integer i = Integer.parseInt(match);
+                if (i > max) {
+                    max = i;
                 }
             }
 
-            results.append(largest);
+            results.append(max);
         }
 
         if (results.length() == 0) {
