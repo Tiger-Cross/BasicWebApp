@@ -115,6 +115,24 @@ public class QueryProcessor {
 
         }
 
+        if (query.toLowerCase().contains("minus")) {
+            Pattern pattern = Pattern.compile("[0-9]+");
+            Matcher matcher = pattern.matcher(query);
+            int sum = 0;
+            boolean first = true;
+            while (matcher.find()) {
+                // Get the matching string
+                String match = matcher.group();
+                if (first) {
+                    first = false;
+                    sum = Integer.parseInt(match);
+                    continue;
+                }
+                sum -= Integer.parseInt(match);
+            }
+            results.append(sum);
+        }
+
         if (results.length() == 0) {
             return "";
         }

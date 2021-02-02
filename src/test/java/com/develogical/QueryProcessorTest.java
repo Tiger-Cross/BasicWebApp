@@ -54,4 +54,9 @@ public class QueryProcessorTest {
     public void drNoJamesBond() {
         assertThat(queryProcessor.process("who played James Bond in the film Dr No"), containsString("Sean Connery"));
     }
+
+    @Test
+    public void returnsMinus() {
+        assertThat(queryProcessor.process("what is 7 minus 3"), containsString("4"));
+    }
 }
